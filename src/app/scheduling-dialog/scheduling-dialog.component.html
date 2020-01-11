@@ -1,0 +1,46 @@
+<div class="container text-center">
+    <form [formGroup]="schedulingForm">
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="username" placeholder="Korisnicko ime">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="password" type="password" placeholder="Korisnicko ime">
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-label>Izaberite termin</mat-label>
+            <mat-select formControlName="appointment">
+                <mat-option *ngFor="let serviceType of listOfAvailableService" [value]="serviceType">
+                    <span>{{serviceType.date +'  '}}</span>
+                    <span>{{  serviceType.time}}</span>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-label>Izaberite tip servisa</mat-label>
+            <mat-select formControlName="serviceType">
+                <mat-option *ngFor="let serviceType of typeOfService" [value]="serviceType">
+                    {{serviceType.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Brend automobila" formControlName="car">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Model automobila" formControlName="carModel">
+        </mat-form-field>
+
+    </form>
+
+    <div class="text-center">
+        <button mat-button class="full-btn" (click)="schedulingService()">Rezervisi</button>
+    </div>
+
+</div>

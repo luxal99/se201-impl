@@ -1,0 +1,12 @@
+<h2>Dodaj termin</h2>
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+    <input matInput type="time" formControlName="time" placeholder="Odaberite vreme">
+</mat-form-field>
+<div class="text-center">
+    <button mat-button style="background-color: transparent;border: 2px solid #555;">Dodaj</button>
+</div>

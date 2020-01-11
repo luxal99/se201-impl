@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="navbar-brand" href="#">AUTO SERVIS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+        <button mat-button class="full-btn" (click)="openLoginDialog()">Login</button>
+        <button mat-button class="border-btn" (click)="openRegistationDialog()">Registracija</button>
+
+    </div>
+</nav>
+
+<div class="header">
+</div>
+
+<div class="container scheduling-div">
+    <div class="row">
+        <div class="col text-center">
+            <img src="../../assets/img/kessel-motors-432x720.jpg" class="img-fluid scheduling" alt="">
+        </div>
+        <div class="col scheduling-text-div text-center">
+            <h1>Lorem ipsum dolor</h1>
+            <h3>Lorem dolor</h3>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                book. It has survived no</p>
+            <button mat-button class="full-btn" (click)="openSchedulingDialog()">Zakazi servis</button>
+        </div>
+    </div>
+</div>

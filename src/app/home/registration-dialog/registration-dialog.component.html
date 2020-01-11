@@ -1,0 +1,28 @@
+<div class="container text-center">
+    <form class="registrationForm" [formGroup]="registerForm">
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="name" placeholder="Ime">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="lastname" placeholder="Prezime">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="telephone" placeholder="Kontakt telefon">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="username" placeholder="Username">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="password" placeholder="Password">
+        </mat-form-field>
+    </form>
+
+    <div class="text-center">
+        <button mat-button class="full-btn" (click)="registerClient()">Registracija</button>
+    </div>
+
+</div>

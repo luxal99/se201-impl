@@ -1,0 +1,20 @@
+.border-btn {
+    background-color: transparent;
+    border: 2px solid #ffe600;
+}
+
+.full-btn {
+    background-color: #ffe600;
+    margin-right: .5em;
+    padding-top: .1em;
+    padding-bottom: .1em;
+}
+
+.header {
+    background-image: url('../../assets/img/car-service-key-features-A-1920x1080_tcm-3154-1323224.jpg');
+    height: 95vh;
+}
+
+.scheduling-div {
+    padding-top: 5em;
+}
