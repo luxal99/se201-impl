@@ -16,7 +16,6 @@ export class ClientPanelComponent implements OnInit {
 
   listOfServices:any =[];
 
-
   loginForm = new FormGroup({
     username: new FormControl("", Validators.required),
     password: new FormControl("", Validators.required)
@@ -48,7 +47,7 @@ export class ClientPanelComponent implements OnInit {
     let username = this.loginForm.get('username').value;
     let password = this.loginForm.get('password').value;
     this.clientService.getAllService(username,password).subscribe(data=>{
-     this.listOfService = data;
+     this.listOfServices = data;
       console.log(data);
       
     })
