@@ -1,0 +1,57 @@
+<div class="container text-center" style="padding-top: 10em;">
+    <div class="text-left">
+        <form class="loginForm" [formGroup]="loginForm">
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="username" placeholder="Korisnicko ime">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" style="padding-left: 4em;">
+                <input matInput formControlName="password" type="password" placeholder="Korisnicko ime">
+            </mat-form-field>
+        </form>
+
+        <button mat-button class="full-btn" (click)="findUser()">Login</button>
+
+    </div>
+
+
+    <table class="text-center" mat-table [dataSource]="listOfServices" class="mat-elevation-z8" style="margin-top: 3em;">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container class="text-center" matColumnDef="serviceType">
+            <th mat-header-cell *matHeaderCellDef> Tip servisa </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container class="text-center" matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Datum </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container class="text-center" matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef> Vreme </th>
+            <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container class="text-center" matColumnDef="car">
+            <th mat-header-cell *matHeaderCellDef> Automobil </th>
+            <td mat-cell *matCellDef="let element"> {{element.car}} </td>
+        </ng-container>
+
+        <ng-container class="text-center" matColumnDef="carModel">
+            <th mat-header-cell *matHeaderCellDef> Model automobila </th>
+            <td mat-cell *matCellDef="let element"> {{element.carModel}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+</div>

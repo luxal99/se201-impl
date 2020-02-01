@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SchedulingService } from './scheduling.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClientPanelComponent } from './client-panel/client-panel.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SchedulingDialogComponent,
     AdminComponent,
     AvailableServiceDialogComponent,
-    LoginComponent
+    LoginComponent,
+    ClientPanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-        ReactiveFormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule

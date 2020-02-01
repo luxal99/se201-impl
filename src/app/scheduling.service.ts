@@ -15,7 +15,7 @@ export class SchedulingService {
   }
 
   schedulingService(service){
-    return this.http.post(this.global+"client/schedulingService/",service,{responseType:'text'});
+    return this.http.post(this.global+"client/schedulingService",service,{responseType:'json'});
   }
 
   createOilService(oilService){

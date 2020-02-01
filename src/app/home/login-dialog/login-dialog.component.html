@@ -1,16 +1,16 @@
 <div class="container">
-    <form class="loginForm">
+    <form class="loginForm" [formGroup]="loginForm">
         <mat-form-field class="example-full-width">
             <input matInput formControlName="username" placeholder="Korisnicko ime">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-            <textarea matInput formControlName="password" placeholder="Sifra"></textarea>
+            <input matInput formControlName="password" placeholder="Korisnicko ime">
         </mat-form-field>
     </form>
 
     <div class="text-center">
-        <button mat-button class="full-btn" (click)="openSchedulingDialog()">Login</button>
+        <button mat-button class="full-btn" (click)="sendData()">Login</button>
     </div>
 
 </div>
