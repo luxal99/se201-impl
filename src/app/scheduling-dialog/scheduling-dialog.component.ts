@@ -45,61 +45,7 @@ export class SchedulingDialogComponent implements OnInit {
   }
 
   schedulingService(){
-    var user = new User();
-    var client = new Client();
-    var service = new Service();
-    user.username = this.schedulingForm.get('username').value;
-    user.password = this.schedulingForm.get('password').value;
-
-    this.service.findClient(user.username,user.password).subscribe(data=>{
-      client.name = data['name'];
-      client.lastname=data['lastname']
-      client.idClient=data['idClient'];
-
-      service.idClient = client;
-      
-      let appointment = this.schedulingForm.get('appointment').value;
-      service.date = appointment.date;
-      service.time = appointment.time;
     
-      service.car = this.schedulingForm.get('car').value;
-      service.carModel = this.schedulingForm.get('carModel').value;
-
-      let typeOfService = this.schedulingForm.get('serviceType').value;
-
-      this.service.schedulingService(service).subscribe(data=>{
-        console.log(data);
-        
-        if(typeOfService.id === 1){
-          
-         let acService = {idService:data}
-         this.service.createAcService(acService).subscribe(data=>{
-           console.log(data);
-           
-         })
-        } else if (typeOfService.id === 2){
-          
-          let oilService = {idService:data}
-          this.service.createOilService(oilService).subscribe(data=>{
-            console.log(data);
-            
-          })
-
-        }else if (typeOfService.id === 3){
-
-          let mehanicService = {idService:data}
-          this.service.createMehanicService(mehanicService).subscribe(data=>{
-            console.log(data);
-            
-          })
-        }
-        
-      })
-
-      
-      
-      
-    })
   }
   displayFn(product) {
     return product.date + ' ' + product.time;

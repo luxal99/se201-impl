@@ -9,11 +9,7 @@ export class RegistrationService {
   
   constructor(private http:HttpClient) { }
 
-  saveClient(client){
-    return this.http.post(global+"registration/saveClient",client,{responseType:'json'});
-  }
-
   registerUser(user){
-    return this.http.post(global+"registration/saveUser",user,{responseType:'text'});
+    return this.http.post(global+"registration/registerUser",user,{responseType:'text'});
   }
 }

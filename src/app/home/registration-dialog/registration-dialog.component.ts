@@ -7,10 +7,11 @@ export class Client{
   name;
   lastname;
   telephone;
-}
-export class User{
   username;
   password;
+}
+export class User{
+  
   idClient:Client;
 }
 @Component({
@@ -42,17 +43,13 @@ export class RegistrationDialogComponent implements OnInit {
     client.name = this.registerForm.get('name').value;
     client.lastname = this.registerForm.get('lastname').value;
     client.telephone = this.registerForm.get('telephone').value;
+    client.username = this.registerForm.get('username').value;
+    client.password = this.registerForm.get('password').value;
 
-    this.service.saveClient(client).subscribe(data=>{
-      client.idClient = data['idClient'];
-      user.username = this.registerForm.get('username').value;
-      user.password = this.registerForm.get('password').value;
-      user.idClient = client;
-
-      this.service.registerUser(user).subscribe(data=>{
-        console.log(data);
-        
-      })
+    
+    this.service.registerUser(client).subscribe(data=>{
+      console.log(data);
+      
     })
 
   

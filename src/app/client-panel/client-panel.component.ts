@@ -23,8 +23,8 @@ export class ClientPanelComponent implements OnInit {
   });
 
   
-  @Input()
-  idClient;
+  // @Input()
+  // idClient;
 
   constructor(private dialog:MatDialog,private service:SchedulingService,private clientService:ClientService) { }
 
@@ -37,7 +37,6 @@ export class ClientPanelComponent implements OnInit {
   openLoginDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '250px',
-      data:[this.idClient]
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -52,21 +51,21 @@ export class ClientPanelComponent implements OnInit {
     })
   }
 
-  findUser(){
-    var user = new User();
-    user.username = this.loginForm.get('username').value;
-    user.password = this.loginForm.get('password').value;
+  // findUser(){
+  //   var user = new User();
+  //   user.username = this.loginForm.get('username').value;
+  //   user.password = this.loginForm.get('password').value;
 
-    this.service.findClient(user.username,user.password).subscribe(data=>{
+  //   this.service.findClient(user.username,user.password).subscribe(data=>{
       
-     this.clientService.getAllService(data['idClient']).subscribe(data=>{
-       this.listOfServices = data;
-       console.log(this.listOfServices);
+  //    this.clientService.getAllService(data['idClient']).subscribe(data=>{
+  //      this.listOfServices = data;
+  //      console.log(this.listOfServices);
        
-     })
+  //    })
       
-    })
-  }
+  //   })
+  // }
 
   displayedColumns: string[] = ['serviceType', 'date','time', 'car','carModel'];
 

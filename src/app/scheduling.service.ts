@@ -10,12 +10,15 @@ export class SchedulingService {
 
   constructor(private http:HttpClient) {}
 
+
+
   getAllAvailableService(){
-    return this.http.get(this.global+"client/getAllAvailableService",{responseType:'json'});
+    return this.http.get(this.global+"service/getAvailableService",{responseType:'json'});
   }
 
-  schedulingService(service){
-    return this.http.post(this.global+"client/schedulingService",service,{responseType:'json'});
+  schedulingService(service,type,username,password){
+    return this.http.post(this.global+"service/getAvailableService/"+type+"/"+username+"/"+password +
+     this.global+"client/schedulingService",service,{responseType:'json'});
   }
 
   createOilService(oilService){
