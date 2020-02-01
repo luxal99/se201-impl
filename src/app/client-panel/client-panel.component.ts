@@ -45,27 +45,14 @@ export class ClientPanelComponent implements OnInit {
   }
 
   getAllServices(){
-    this.clientService.getAllService(34).subscribe(data=>{
+    let username = this.loginForm.get('username').value;
+    let password = this.loginForm.get('password').value;
+    this.clientService.getAllService(username,password).subscribe(data=>{
      this.listOfService = data;
+      console.log(data);
       
     })
   }
-
-  // findUser(){
-  //   var user = new User();
-  //   user.username = this.loginForm.get('username').value;
-  //   user.password = this.loginForm.get('password').value;
-
-  //   this.service.findClient(user.username,user.password).subscribe(data=>{
-      
-  //    this.clientService.getAllService(data['idClient']).subscribe(data=>{
-  //      this.listOfServices = data;
-  //      console.log(this.listOfServices);
-       
-  //    })
-      
-  //   })
-  // }
 
   displayedColumns: string[] = ['serviceType', 'date','time', 'car','carModel'];
 

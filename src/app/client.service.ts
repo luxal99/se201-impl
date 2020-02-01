@@ -10,7 +10,7 @@ export class ClientService {
 
   constructor(private http:HttpClient) { }
 
-  getAllService(idClient){
-    return this.http.get(global+"client/getAllServices/"+idClient,{responseType:'json'});
+  getAllService(username,password){
+    return this.http.get(global+"client/getAllServices/"+username+"/"+password,{responseType:'json'});
   }
 }
