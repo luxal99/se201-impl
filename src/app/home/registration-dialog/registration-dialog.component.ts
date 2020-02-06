@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from 'src/app/registration.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-export class Client{
+export class Client {
   idClient;
   name;
   lastname;
@@ -10,9 +10,9 @@ export class Client{
   username;
   password;
 }
-export class User{
-  
-  idClient:Client;
+export class User {
+
+  idClient: Client;
 }
 @Component({
   selector: 'app-registration-dialog',
@@ -31,12 +31,12 @@ export class RegistrationDialogComponent implements OnInit {
   });
 
 
-  constructor(private service:RegistrationService) { }
+  constructor(private service: RegistrationService) { }
 
   ngOnInit() {
   }
 
-  registerClient(){
+  registerClient() {
     var client = new Client();
     var user = new User();
 
@@ -46,13 +46,17 @@ export class RegistrationDialogComponent implements OnInit {
     client.username = this.registerForm.get('username').value;
     client.password = this.registerForm.get('password').value;
 
-    
-    this.service.registerUser(client).subscribe(data=>{
-      console.log(data);
-      
-    })
+    if ( client.name === '' || client.lastname === '' || client.telephone === '' || client.username === '' || client.password === '' ) {
+      alert('Unesite validne podatke')
+    } else {
+      this.service.registerUser(client).subscribe(data => {
+        console.log(data);
+        alert(data);
+      })
+    }
 
-  
+
+
   }
 
 }

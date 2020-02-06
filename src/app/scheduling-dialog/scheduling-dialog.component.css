@@ -1,6 +1,13 @@
-.full-btn {
+.border-btn {
+    border: 1px solid #ffe600;
+    background-color: transparent;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.border-btn:hover {
     background-color: #ffe600;
-    margin-right: .5em;
-    padding-top: .1em;
-    padding-bottom: .1em;
+    transition: .6s ease-in-out;
 }

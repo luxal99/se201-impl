@@ -11,3 +11,17 @@
 .scheduling-div {
     padding-top: 5em;
 }
+
+.scheduling-btn {
+    border: 1px solid #ffe600;
+    background-color: transparent;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.scheduling-btn:hover {
+    background-color: #ffe600;
+    transition: .6s ease-in-out;
+}

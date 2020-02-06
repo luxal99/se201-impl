@@ -45,21 +45,24 @@ export class SchedulingDialogComponent implements OnInit {
   }
 
   schedulingService(){
-    let appointment = this.schedulingForm.get('appointment').value;
-    let username = this.schedulingForm.get('username').value;
-    let password = this.schedulingForm.get('password').value;
-    let type = this.schedulingForm.get('serviceType').value;
-    let service = new Service();
-    service.date = appointment.date;
-    service.time = appointment.time;
-    service.car = this.schedulingForm.get('car').value;
-    service.carModel = this.schedulingForm.get('carModel').value;
+     let appointment = this.schedulingForm.get('appointment').value;
+     let username = this.schedulingForm.get('username').value;
+     let password = this.schedulingForm.get('password').value;
+     let type = this.schedulingForm.get('serviceType').value;
+     let service = new Service();
+     service.date = appointment.date;
+     service.time = appointment.time;
+     service.car = this.schedulingForm.get('car').value;
+     service.carModel = this.schedulingForm.get('carModel').value;
+
+     console.log(type.id);
 
     this.service.schedulingService(service,type.id,username,password).subscribe(data=>{
       console.log(data);
+       alert(data);
       
-    })
-
+     })
+  
     
   }
   displayFn(product) {
